@@ -1,4 +1,4 @@
-package src.p03.c01;
+package p03.c01;
 
 import java.util.Enumeration;
 import java.util.Hashtable;
@@ -10,9 +10,10 @@ public class Parque implements IParque{
 	private Hashtable<String, Integer> contadoresPersonasPuerta;
 	
 	
-	public Parque() {
+	public Parque() {	// TODO
 		contadorPersonasTotales = 0;
 		contadoresPersonasPuerta = new Hashtable<String, Integer>();
+		// TODO
 	}
 
 

@@ -1,9 +1,9 @@
-package src.p03.c01;
+package p03.c01;
 
 public class SistemaLanzador {
 	public static void main(String[] args) {
 		
-		IParque parque = AdaptadorParqueSincronizado.getInstancia();
+		IParque parque = new Parque(); // TODO
 		char letra_puerta = 'A';
 		
 		System.out.println("¡Parque abierto!");

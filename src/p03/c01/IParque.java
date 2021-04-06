@@ -1,4 +1,4 @@
-package src.p03.c01;
+package p03.c01;
 
 public interface IParque {
 	
