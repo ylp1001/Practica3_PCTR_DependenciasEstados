@@ -5,7 +5,6 @@ import java.util.Hashtable;
 
 public class Parque implements IParque{
 
-	// TODO 
 
 	// TODO 
 	private int contadorPersonasTotales;
