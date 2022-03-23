@@ -73,6 +73,8 @@ public class Parque implements IParque{
 		// TODO 
 		// TODO
 		
+		
+		
 	}
 
 	protected void comprobarAntesDeEntrar(){	// TODO
