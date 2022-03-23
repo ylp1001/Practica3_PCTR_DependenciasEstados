@@ -72,6 +72,7 @@ public class Parque implements IParque{
 		assert sumarContadoresPuerta() == contadorPersonasTotales : "INV: La suma de contadores de las puertas debe ser igual al valor del contador del parte";
 		// TODO 
 		// TODO
+		
 	}
 
 	protected void comprobarAntesDeEntrar(){	// TODO
