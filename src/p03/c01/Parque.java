@@ -95,16 +95,17 @@ public class Parque implements IParque{
 		
 	}
 
-	protected void comprobarAntesDeEntrar(){	// TODO
-		//
-		// TODO
-		//
+	protected synchronized void comprobarAntesDeEntrar() throws InterruptedException{	// TODO
+		if (contadorPersonasTotales == aforo) {
+			wait();
+					
+		}
 	}
 
-	protected void comprobarAntesDeSalir(){		// TODO
-		//
-		// TODO
-		//
+	protected synchronized void comprobarAntesDeSalir() throws InterruptedException{		// TODO
+		if (contadorPersonasTotales == 0) {
+			wait();
+		}
 	}
 
 
