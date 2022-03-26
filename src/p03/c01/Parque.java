@@ -49,6 +49,20 @@ public class Parque implements IParque{
 	// TODO Método salirDelParque
 	//
 	public synchronized void SalirDelParque(String puerta) throws InterruptedException  {
+		if (contadoresPersonasPuerta.get(puerta) == null){
+				contadoresPersonasPuerta.put(puerta, 0);
+			}
+			
+			comprobarAntesDeSalir();
+			
+			
+			contadorPersonasTotales--;		
+			contadoresPersonasPuerta.put(puerta, contadoresPersonasPuerta.get(puerta)-1);
+			
+			imprimirInfo(puerta, "Salida");
+		
+			checkInvariante();
+			notifyAll();
 	}
 	
 	
