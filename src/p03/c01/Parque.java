@@ -48,6 +48,8 @@ public class Parque implements IParque{
 	// 
 	// TODO Método salirDelParque
 	//
+	public synchronized void SalirDelParque(String puerta) throws InterruptedException  {
+	}
 	
 	
 	private void imprimirInfo (String puerta, String movimiento){
