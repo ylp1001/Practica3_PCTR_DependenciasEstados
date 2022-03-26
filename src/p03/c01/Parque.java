@@ -11,23 +11,23 @@ public class Parque implements IParque{
 	private Hashtable<String, Integer> contadoresPersonasPuerta;
 	
 	
-	public Parque(int aforo) {	// TODO
+	public Parque(int aforo) {	
 		this.aforo = aforo;
 		contadorPersonasTotales = 0;
 		contadoresPersonasPuerta = new Hashtable<String, Integer>();
-		// TODO
+		
 	}
 
 
 	@Override
-	public synchronized void entrarAlParque(String puerta) throws InterruptedException{		// TODO
+	public synchronized void entrarAlParque(String puerta) throws InterruptedException{		
 		
 		// Si no hay entradas por esa puerta, inicializamos
 		if (contadoresPersonasPuerta.get(puerta) == null){
 			contadoresPersonasPuerta.put(puerta, 0);
 		}
 		
-		// TODO
+		
 		comprobarAntesDeEntrar();		
 		
 		// Aumentamos el contador total y el individual
@@ -37,17 +37,15 @@ public class Parque implements IParque{
 		// Imprimimos el estado del parque
 		imprimirInfo(puerta, "Entrada");
 		
-		// TODO
+		
 		
 		checkInvariante();
 		notifyAll();
-		// TODO
+		
 		
 	}
 	
-	// 
-	// TODO Método salirDelParque
-	//
+	
 	public synchronized void SalirDelParque(String puerta) throws InterruptedException  {
 		if (contadoresPersonasPuerta.get(puerta) == null){
 				contadoresPersonasPuerta.put(puerta, 0);
@@ -89,20 +87,20 @@ public class Parque implements IParque{
 	protected void checkInvariante() {
 		assert sumarContadoresPuerta() == contadorPersonasTotales : "INV: La suma de contadores de las puertas debe ser igual al valor del contador del parte";
 		assert ((contadorPersonasTotales <= aforo) || (contadorPersonasTotales >= 0)) : "El aforo máximo es 50 y el mínimo 0";
-		// TODO
+		
 		
 		
 		
 	}
 
-	protected synchronized void comprobarAntesDeEntrar() throws InterruptedException{	// TODO
+	protected synchronized void comprobarAntesDeEntrar() throws InterruptedException{	
 		if (contadorPersonasTotales == aforo) {
 			wait();
 					
 		}
 	}
 
-	protected synchronized void comprobarAntesDeSalir() throws InterruptedException{		// TODO
+	protected synchronized void comprobarAntesDeSalir() throws InterruptedException{		
 		if (contadorPersonasTotales == 0) {
 			wait();
 		}
